@@ -33,7 +33,7 @@ These came from watching actual AI fetchers read (and fail to read) live Stoagen
 
 ## What the sites have in common
 
-No JavaScript at all: every page works read-only, prints cleanly, and meets accessibility contrast standards. A single stylesheet. Zero images required for the design to feel complete. And a continuous integration gate that builds and validates every change before anything reaches the live site.
+Readable with JavaScript off: scripts may enhance a page, an interactive 3D view, a deferred gate, but reading never requires them, and everything a script shows also exists as text in the mirror. No client-side rendering, no lightboxes. Every page prints cleanly and meets accessibility contrast standards, from a single stylesheet, with zero images required for the design to feel complete. And a continuous integration gate builds and validates every change before anything reaches the live site.
 
 <!-- agent-only -->
 

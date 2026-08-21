@@ -21,7 +21,9 @@ history renders as a draft, which is correct. CI needs `fetch-depth: 0`.
 
 ## Hard constraints
 
-- **Zero JavaScript.** The validator fails the build on any script tag.
+- **This site ships no JavaScript** (a per-site choice; the pattern's rule
+  is readable-with-JS-off, enhancement allowed). The validator fails this
+  build on any script tag.
   Everything must work read-only, with large type, and print cleanly.
 - **robots.txt is allow-all with `Content-Signal: search=yes, ai-input=yes,
   ai-train=yes`.** That is a decision, not an oversight. Do not narrow it.
