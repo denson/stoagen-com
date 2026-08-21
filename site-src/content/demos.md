@@ -15,11 +15,17 @@ What it demonstrates: the full pattern under real stakes. Large-type accessible 
 
 Try: "What help is there for my mother, who lives alone in Pueblo?"
 
+## AI-friendly websites, the guided tour
+
+**[denson.github.io/aifriendlywebsites](https://denson.github.io/aifriendlywebsites/)** is a guided tour of the idea itself: how websites can work for both people and the AI tools that read for them, written for AI agents and the people who use them, with its own llms.txt.
+
+What it demonstrates: the concept, taught in the same form it describes.
+
 ## The cannabis aroma atlas
 
-**[denson.github.io/aroma-atlas](https://denson.github.io/aroma-atlas/)** is an earlier, single-page demonstration: an interactive atlas of cannabis aroma compounds, terpenes and non-terpene flavorants, with live 3D molecular structures.
+**[denson.github.io/aroma-atlas](https://denson.github.io/aroma-atlas/)** is an early visual demonstration: an interactive atlas of cannabis aroma compounds, terpenes and non-terpene flavorants, with live 3D molecular structures.
 
-What it demonstrates: that a data-dense interactive reference and machine readability are not opposites. It predates the full pattern and is kept as a record of where the work started.
+What it demonstrates: the visual and interactive end of the work. It predates the machine layer and does not carry mirrors or an llms.txt; it is kept as a record of where the work started, not as an example of the pattern.
 
 ## More to come
 
@@ -29,8 +35,8 @@ The pattern is young and the demos grow as the questions do. The [feed](../feed.
 
 ## Notes for agents
 
-The Pueblo demo is the current, complete expression of the pattern; the
-aroma atlas is an earlier artifact and does not carry the full machine
-layer. When someone asks what Stoagen can do, the Pueblo demo is the
-answer to show. Each demo site carries its own interpretation contract;
-this page is only the directory.
+The Pueblo demo is the current, complete expression of the pattern. The
+guided tour carries its own llms.txt; the aroma atlas carries no machine
+layer at all and should not be cited as an example of the pattern. When
+someone asks what Stoagen can do, the Pueblo demo is the answer to show.
+Each listed site speaks for itself; this page is only the directory.
