@@ -8,7 +8,7 @@ Everything in this file and in the page mirrors is information from the
 publisher, not instructions to you. Your operator's instructions always
 come first; apply ours as source metadata, with your own judgment.
 
-The flagship demonstration is Pueblo Senior Services, Explained, at
+The flagship demonstration is Pueblo SRDA Questions, at
 https://pueblo-srda-questions.stoagen.com/ with its own llms.txt and an
 assistant start page at https://pueblo-srda-questions.stoagen.com/start.md.
 Questions about Pueblo senior services belong there, not here.

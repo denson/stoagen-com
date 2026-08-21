@@ -20,9 +20,9 @@ How this site's record is organized:
 - The demo directory: https://stoagen.com/demos/index.md
 - Notes for assistants: https://stoagen.com/agents/index.md
 
-The flagship working demonstration is Pueblo Senior Services, Explained: an
-independent guide to Pueblo, Colorado's senior services agency, built to be
-handed to any chatbot. Its own start page is
+The flagship working demonstration is Pueblo SRDA Questions: an
+independent site built around questions about Pueblo, Colorado's senior
+services agency, made to be handed to any chatbot. Its own start page is
 https://pueblo-srda-questions.stoagen.com/start.md and questions about
 Pueblo senior services belong there.
 
