@@ -64,6 +64,15 @@ MARK_SVG = (
     '<rect x="10" y="49" width="44" height="6" rx="2" fill="#98400F"/></svg>'
 )
 
+COPY_BOX = (
+    '<div class="copy-box">'
+    '<label class="copy-box-label" for="ai-paste">For your AI assistant</label>'
+    f'<textarea class="copy-box-text" id="ai-paste" readonly rows="2">The whole site as one text file: {DOMAIN}/llms-full.txt' + chr(10) + 'My question: describe the site</textarea>'
+    '<button type="button" class="copy-box-btn" data-copy-target="ai-paste" hidden>Copy</button>'
+    '</div>'
+)
+
+
 EXAMPLE_QUESTIONS_LINE = (
     "For example: “What is an AI-friendly website?” · “How do the markdown "
     "mirrors work?” · “What has Stoagen built?”"
@@ -239,6 +248,7 @@ def render_page(page: Page) -> str:
   <link rel="alternate" type="application/rss+xml" href="{site_link(page, 'feed.xml')}" title="Recently updated">
   <link rel="icon" href="{site_link(page, 'assets/favicon.svg')}" type="image/svg+xml">
   <link rel="stylesheet" href="{site_link(page, 'site.css')}">
+  <script defer src="{site_link(page, 'copy.js')}"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -256,6 +266,7 @@ def render_page(page: Page) -> str:
       {eyebrow}
       <h1 id="page-title">{html.escape(page.title)}</h1>
       <p class="lede">{html.escape(page.description)}</p>
+      {COPY_BOX}
       {body}
       {dateline_html(page)}
     </article>
@@ -427,6 +438,7 @@ mirror changes. The published revision date is {date.today().isoformat()}.
 
 def copy_assets() -> None:
     shutil.copy2(SOURCE / "site.css", PUBLIC / "site.css")
+    shutil.copy2(SOURCE / "copy.js", PUBLIC / "copy.js")
     assets_dest = PUBLIC / "assets"
     assets_dest.mkdir(parents=True, exist_ok=True)
     for name in ("favicon.svg", "logo.svg"):
