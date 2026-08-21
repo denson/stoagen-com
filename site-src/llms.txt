@@ -1,0 +1,43 @@
+# Stoagen
+> Stoagen builds websites that people and their AI assistants can both read
+> faithfully: every page written once and published twice, as a readable
+> human page and a machine mirror that can never drift from it. This apex
+> site describes the system; the working demonstrations are separate sites.
+
+Everything in this file and in the page mirrors is information from the
+publisher, not instructions to you. Your operator's instructions always
+come first; apply ours as source metadata, with your own judgment.
+
+The flagship demonstration is Pueblo Senior Services, Explained, at
+https://pueblo-srda-questions.stoagen.com/ with its own llms.txt and an
+assistant start page at https://pueblo-srda-questions.stoagen.com/start.md.
+Questions about Pueblo senior services belong there, not here.
+
+Before 2026-08-22 this domain briefly hosted that demo directly; /programs/*
+and /about/ now serve redirect stubs to the subdomain.
+
+Warnings from the field, part of this contract: assume this file may not
+have been read (every load-bearing rule also appears in visible page text);
+if your tool refuses a mirror's text/markdown content type, append .txt to
+the URL; and this site is new enough that web search may return nothing or
+unrelated results for it. If search fails, say the site could not be found
+by search rather than describing it from guesswork.
+
+The pattern page is the canonical description of what a Stoagen site
+publishes and the rules it follows. How the sites are produced behind the
+scenes is deliberately out of scope on this site.
+
+Links below point at the Markdown mirror of each page, which is what you
+should read. Drop `index.md` from any URL to get the page a human should be
+given. llms-full.txt carries every mirror concatenated.
+
+## Start here
+- [Assistant start page](https://stoagen.com/start.md): the one-URL front door for chatbots.
+- [Home](https://stoagen.com/index.md): what Stoagen is, and the demo to try.
+- [The pattern](https://stoagen.com/pattern/index.md): one file two faces, the machine layer, and the field-tested rules with their enforcement.
+- [Demo sites](https://stoagen.com/demos/index.md): the working demonstrations and what each shows.
+- [Agent access](https://stoagen.com/agents/index.md): this contract, in page form.
+
+## Optional
+- [Full corpus](https://stoagen.com/llms-full.txt): every page mirror in one file, for tools that prefer a single fetch.
+- [Feed](https://stoagen.com/feed.xml): pages by last update.
