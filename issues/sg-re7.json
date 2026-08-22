@@ -18,11 +18,15 @@
     {
       "text": "Deferred nit resolved (PRINCIPAL, 2026-08-22: every working repo gets a beadwork store so work can be handed to another agent, or a fresh instance of this one, if something goes wrong). Stores initialized and pushed: denson/pueblo-srda-questions prefix psq, START HERE ticket psq-zue; denson/aroma-atlas prefix aa, START HERE ticket aa-x5a. Each repo's root CLAUDE.md now carries the bw-prime-first work-management block and its START HERE pointer, mirroring this repo's. Remaining on this ticket: step 4 child tickets, pending the list.",
       "timestamp": "2026-08-22T04:44:08Z"
+    },
+    {
+      "text": "PRE-COMPACTION HANDOFF 2026-08-22 ~06:50 UTC: stoagen-com/HANDOFF_Polybius-the-Stoagen_2026-08-22.md (committed to main) indexes every active ticket, path, ruling and pending PRINCIPAL item for this seat. Step 4 still awaits PRINCIPAL's list.",
+      "timestamp": "2026-08-22T05:37:38Z"
     }
   ],
   "priority": 1,
   "status": "in_progress",
   "title": "[START HERE] Building Stoas of agents for stoagen: the kit is at user-tier u--0dx; read it, then file one ticket per thing the site needs",
   "type": "task",
-  "updated_at": "2026-08-22T04:44:08Z"
+  "updated_at": "2026-08-22T05:37:38Z"
 }
