@@ -32,6 +32,7 @@ tickets below.
 | denson/aroma-atlas | C:\claude_projects\aroma-atlas | https://denson.github.io/aroma-atlas/ | aa- / aa-x5a |
 | denson/cannabis-review-project | C:\claude_projects\cannabis-review-project | https://colorado-medical-cannabis.org/ | GH issues 195, 196, 198, 199 |
 | denson/user-beadwork | C:\claude_projects\user-beadwork | (user tier) | u-- / u--xal, u--0dx |
+| denson/ethiopia-build | C:\claude_projects\ethiopia-build | https://ethiopia-build.stoagen.com/ (DNS pending) | eb- / eb-hx4 |
 
 All three Stoagen sites: licensed CC BY 4.0 (content) + MIT (code); copy
 box "Tell me about this site: <domain>/full_site.txt"; descriptive ask-AI
@@ -78,10 +79,20 @@ served; one Verify click).
 - **u--0dx**: the kit; read. Replies to the Grand only via
   `[for: Polybius the Grand]` on sg- tickets.
 
+## Update 2026-08-22 ~15:20 UTC
+
+The Claude Design export arrived and the Ethiopia site was built and deployed
+(28 pages, repo denson/ethiopia-build, eb-hx4 START HERE, 28 page tickets,
+progress posted on u--xal). Design export unpacked at
+`C:\claude_projects\ethiopia-build-design\`. Pages is on, custom domain set;
+the site resolves once the PRINCIPAL adds the Cloudflare CNAME
+`ethiopia-build -> denson.github.io` (DNS only). Then: enforce HTTPS on the
+repo, Search Console property, and decide whether stoagen.com/demos/ lists it.
+
 ## Pending from PRINCIPAL
 
-1. "Go" (or edits) on the Ethiopia site outline.
-2. The Claude Design export zip path.
+1. Edits to the Ethiopia site pages (via eb- tickets).
+2. The Cloudflare CNAME for ethiopia-build (then HTTPS + GSC).
 3. The list of things stoagen.com needs (sg-re7 step 4).
 4. Whether the Amharic review reading came back.
 5. Search Console property for pueblo-srda-questions.stoagen.com (one click).
