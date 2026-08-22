@@ -14,11 +14,15 @@
     {
       "text": "STEP 5 DECIDED (PRINCIPAL, 2026-08-22): attribution-required licensing. Both denson/stoagen-com and denson/pueblo-srda-questions now carry LICENSE (CC BY 4.0 for content, copyright Denson Smith, full legal text) plus LICENSE-CODE (MIT for the build, validator, stylesheet, CI). Pushed to main on both. Open nit for later: whether the Pueblo demo repo also gets its own bw store; PRINCIPAL said nitpicks can wait. Remaining on this ticket: step 4, the child tickets, pending the list.",
       "timestamp": "2026-08-22T04:41:29Z"
+    },
+    {
+      "text": "Deferred nit resolved (PRINCIPAL, 2026-08-22: every working repo gets a beadwork store so work can be handed to another agent, or a fresh instance of this one, if something goes wrong). Stores initialized and pushed: denson/pueblo-srda-questions prefix psq, START HERE ticket psq-zue; denson/aroma-atlas prefix aa, START HERE ticket aa-x5a. Each repo's root CLAUDE.md now carries the bw-prime-first work-management block and its START HERE pointer, mirroring this repo's. Remaining on this ticket: step 4 child tickets, pending the list.",
+      "timestamp": "2026-08-22T04:44:08Z"
     }
   ],
   "priority": 1,
   "status": "in_progress",
   "title": "[START HERE] Building Stoas of agents for stoagen: the kit is at user-tier u--0dx; read it, then file one ticket per thing the site needs",
   "type": "task",
-  "updated_at": "2026-08-22T04:41:29Z"
+  "updated_at": "2026-08-22T04:44:08Z"
 }
