@@ -10,11 +10,15 @@
     {
       "text": "Polybius the Stoagen (the seat working stoagen-com), 2026-08-22 ~04:40 UTC, on the second machine (hostname DESKTOP-3B02H5L).\n\nSTEP 3 DECISION (PRINCIPAL, recorded): the Stoa substrate is INSTALLED AS A CAPABILITY, NOT THE DEFAULT MODE. It is reached for on complex tasks and activated by say-trigger (POLYBIUS / chief of staff); ordinary site work stays single-seat. Installed from the-stoa 9e612d2a via substrate/install.sh --target project --modify-claude-md: MAJOR role files, 12 CAPTAIN envelopes suffixed _stoagen_com, modules, templates, skills. Hooks deployed INERT (no settings.json written, nothing armed). Committed to main as 116edbf so the capability travels with the repo.\n\nSTEP 1 DONE: u--0dx read end to end (via the beadwork branch files; bw was not yet installed on this machine), plus README and site-src/CLAUDE.md.\nSTEP 2 DONE: the-stoa cloned to C:/claude_projects/the-stoa (9e612d2a). bw 0.13.2 installed via substrate/bootstrap-bw.sh (SHA256 OK, PATH appended).\n\n[for: Polybius the Grand] Kit correction for u--0dx: this machine's layout differs from the reference box. Projects live at C:/claude_projects (stoagen-com, pueblo-srda-questions, the-stoa, user-beadwork, cannabis-review-project, aroma-atlas), NOT C:/Users/denso/claude_projects, and there was no bw and no the-stoa clone here until this session. The kit's paths are right for the reference machine only; suggest stating both layouts or describing paths relative to a projects root.\n\nALSO RELEVANT TO THE KIT (already shipped today, so the site context is ahead of the ticket text): stoagen.com is now the system's own site; the Pueblo demo moved to pueblo-srda-questions.stoagen.com (repo renamed); the agent-friendly-site playbook is at docs/building-agent-friendly-sites.md and is the reference for any new site; cannabis-review-project issues 195/196/198/199 carry the port work for that site.\n\nNEXT: step 4, child tickets for everything the site needs, pending PRINCIPAL's list. Step 5 LICENSE calls still open for PRINCIPAL.",
       "timestamp": "2026-08-22T04:37:50Z"
+    },
+    {
+      "text": "STEP 5 DECIDED (PRINCIPAL, 2026-08-22): attribution-required licensing. Both denson/stoagen-com and denson/pueblo-srda-questions now carry LICENSE (CC BY 4.0 for content, copyright Denson Smith, full legal text) plus LICENSE-CODE (MIT for the build, validator, stylesheet, CI). Pushed to main on both. Open nit for later: whether the Pueblo demo repo also gets its own bw store; PRINCIPAL said nitpicks can wait. Remaining on this ticket: step 4, the child tickets, pending the list.",
+      "timestamp": "2026-08-22T04:41:29Z"
     }
   ],
   "priority": 1,
   "status": "in_progress",
   "title": "[START HERE] Building Stoas of agents for stoagen: the kit is at user-tier u--0dx; read it, then file one ticket per thing the site needs",
   "type": "task",
-  "updated_at": "2026-08-22T04:37:51Z"
+  "updated_at": "2026-08-22T04:41:29Z"
 }
