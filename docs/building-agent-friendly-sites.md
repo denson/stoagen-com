@@ -72,6 +72,23 @@ Why `full_site.txt` matters most: for a fetcher that only follows URLs it
 has already seen, one user-pasted URL containing the entire corpus
 dissolves every link-following limitation at once.
 
+**The size ceiling (field-tested 2026-08-21 on the 46-page cannabis
+site):** a single assistant fetch reliably ingests on the order of 100 KB.
+The Stoagen demo sites are 14-52 KB and fit. A 468 KB corpus silently
+truncates, so above the budget the paste target must be a **map, not the
+dump**: a hand-authored `site_guide.txt` (digest of what the site is, then
+every page with its absolute page URL, absolute `index.md.txt` URL,
+status, and description, then the other machine routes with the corpus
+size and truncation caveat stated). One fetch of the guide seeds the
+fetcher's allowlist with the entire site; two-hop probes on both a
+cheapest-tier OpenAI model and mid-tier Claude then navigated guide to
+deep pages and reproduced figures exactly. Enforce with a validator: every
+page listed as absolute https, no relative links, under the single-fetch
+budget. The paste line becomes "Look at this file and describe the site:
+https://<domain>/site_guide.txt". Build the corpus file anyway; it is the
+right artifact for tools that prefer one fetch, just not the front door at
+that scale.
+
 ## 5. The two body components on every page
 
 **The copy box** (near the top, under the lede): a readonly `<textarea>`
@@ -168,6 +185,17 @@ round (failed fetches are cached per-conversation and per-URL):
    Find it and convert it to description.
 5. After any fix, re-test in a fresh conversation, and remember deploy and
    CDN caches (10 minutes on GitHub Pages) before concluding failure.
+6. Run a two-hop probe: ask a question whose answer lives only on deep
+   pages, not in the front-door file. Pass: the assistant navigates from
+   the front door to the right pages and reproduces specifics exactly,
+   keeping their labels and datelines. Test the cheapest tier you expect
+   readers to use; the contract must survive on floor-tier models.
+7. Note how each family reaches the file. Field-tested: the Claude family
+   reached a user-pasted URL through web search rather than a bare
+   fetch, which makes search indexing load-bearing for that family even
+   when the person supplies the link. Status banners on pages transmit
+   downstream too: assistants restate 'being researched' figures as
+   provisional, so page status is a measured lever on framing.
 
 Log what each assistant actually said. The failures are the design input:
 every rule in this document exists because some assistant, on some real
