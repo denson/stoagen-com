@@ -31,6 +31,10 @@ These came from watching actual AI fetchers read (and fail to read) live Stoagen
 5. **Dates are derived, never typed.** Published and updated times come from the page's revision history, to the minute, in UTC. Nobody has to remember to update a date, so the dates can be trusted.
 6. **Honesty is marked, not implied.** Unverified facts carry a visible marker and the exact question that would resolve them. An assistant restating the page carries the marker with it.
 
+## Why it looks the way it does
+
+Every rule above has to pass two different filters at once. An assistant's tools must be able to *reach* the content, which killed relative links, footer placement, and anything advertised only in metadata. And the assistant must judge the content *safe*: assistants are rightly trained to distrust text that tells them what to do, so anything site-authored that reads as directing the agent gets discounted as a possible injection attempt, no matter how well-meant. What survives both filters is deliberately plain: the site states facts about itself, and the one load-bearing action belongs to the person, who copies a single line and hands it to their own assistant as their own request. The result can look convoluted; every piece of it is the fix for a failure a real assistant actually exhibited.
+
 ## What the sites have in common
 
 Readable with JavaScript off: scripts may enhance a page, an interactive 3D view, a deferred gate, but reading never requires them, and everything a script shows also exists as text in the mirror. No client-side rendering, no lightboxes. Every page prints cleanly and meets accessibility contrast standards, from a single stylesheet, with zero images required for the design to feel complete. And a continuous integration gate builds and validates every change before anything reaches the live site.
