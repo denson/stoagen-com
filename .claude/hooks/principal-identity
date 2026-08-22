@@ -1,0 +1,10 @@
+# Stoa attribution-advisory — PRINCIPAL identity allow-list.
+# One accepted name or email per line ('#' comments + blanks ignored).
+# The attribution-advisory skill's SECONDARY check compares NEW author-like
+# field VALUES (added in a diff, outside vendored paths) against this list;
+# a value not on the list is REPORTED for review in the advisory report.
+# It is NEVER blocked or denied — the advisory is report-only. This is the
+# SKILL'S CONFIG, not an author field of any repo artifact. Widen it when a
+# legit PRINCIPAL identity is missing. An ABSENT or EMPTY list SKIPS the
+# SECONDARY check (PRIMARY still runs, name-agnostic). Seeded from the
+# target's global git identity + any --principal-name passed at install.

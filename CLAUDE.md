@@ -37,3 +37,29 @@ The site source and its rules live in `site-src/`; read `site-src/CLAUDE.md` bef
 ## Authorship
 
 Every author, owner, creator, by, or copyright field on anything built in this repository says Denson Smith. A different name anywhere is a stop-and-ask, never a silent edit.
+
+
+<!-- agent-substrate: POLYBIUS reference -->
+## Chief-of-Staff (MAJOR_POLYBIUS)
+
+This environment hosts the three-role agent substrate. The Chief-of-Staff role is defined in `.claude/MAJOR_POLYBIUS.md`. When the PRINCIPAL invokes "POLYBIUS" or "chief of staff", read that file and assume the role.
+
+If `.claude/.substrate-drift-signal` exists on disk, surface its contents to the PRINCIPAL at the start of the next orchestrator turn (substrate-drift was detected at session start; do not auto-apply).
+
+
+
+<!-- agent-substrate: base-vs-custom convention -->
+## Customize your stoa team — base vs custom
+
+This workspace carries a BASE stoa team deployed from substrate. To customize agents, skills, or templates, author them at the conventional custom paths below. Substrate updates (`install.sh` re-runs, `check-substrate-updates` applies) leave custom files untouched.
+
+| Class | Custom path |
+|---|---|
+| Custom CAPTAINs | `.claude/agents/custom/CAPTAIN_<MNEMONIC>_<slug>.md` |
+| Custom skills | `.claude/skills/custom-<skill-name>/SKILL.md` |
+| Custom templates | `.claude/templates/custom/*.md` |
+
+Custom CAPTAIN `name:` frontmatter MUST be distinct from base agent names (Claude Code silently drops one on collision). The convention is `name: CAPTAIN_<MNEMONIC>_<distinct-slug>`.
+
+See `.claude/MAJOR_POLYBIUS.md` §17 (POLYBIUS-specific) and `.claude/operating-disciplines.md` §23 (universal-team framing) for the full discipline.
+

@@ -1,0 +1,7 @@
+{
+  "_comment": "CANDIDATE Stoa settings 'env' block — Windows PYTHONUTF8 fix (operating-disciplines.md §13). install.sh deploys this to <DEST>/.claude/templates/settings-env-block.json as a CANDIDATE. Merging it into a live .claude/settings.json sets these env vars for every session + every spawned subprocess incl. the Bash tool (https://code.claude.com/docs/en/settings 'env' key). Merge is operator-gated (install.sh --enable-env-block, DEFAULT OFF) and at user tier prints a manual-merge runbook (never auto-writes ~/.claude/settings.json — the running config). No code execution at config time. Cross-platform-safe: PYTHONUTF8 is a no-op on non-Windows Pythons already defaulting to UTF-8.",
+  "env": {
+    "PYTHONUTF8": "1",
+    "PYTHONIOENCODING": "utf-8"
+  }
+}

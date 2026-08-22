@@ -1,0 +1,5 @@
+--- /dev/null
++++ b/src/foo.py
+@@ -0,0 +1,2 @@
++# example module
++author = "Mallory Example"

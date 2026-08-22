@@ -1,0 +1,88 @@
+#!/bin/sh
+# Stoa per-CAPTAIN seat-identity trailer — prepare-commit-msg hook.
+# operating-disciplines.md §28. CANDIDATE / DEFAULT-OFF / OPT-IN: install.sh
+# deploys this to <dest>/.claude/githooks-candidate/prepare-commit-msg; it is
+# NEVER auto-installed into any .git/hooks/. To arm per-clone, the operator
+# copies it to .git/hooks/prepare-commit-msg (chmod +x) OR points
+# core.hooksPath at the candidate dir. See .claude/githooks-candidate/README.md.
+#
+# FAIL-OPEN CONTRACT (load-bearing): this hook MUST exit 0 on EVERY path.
+# prepare-commit-msg aborts the commit on non-zero exit AND is NOT suppressed
+# by --no-verify (https://git-scm.com/docs/githooks, re-fetched 2026-06-04) —
+# so a non-zero exit would brick EVERY commit including emergency ones. Every
+# branch below ends at `exit 0`.
+#
+# NEVER touches Author: (stays PRINCIPAL's per the absolute never-override rule).
+# Appends ONLY the Co-Authored-By trailer (metadata layer, parallel to
+# CAPTAIN_ADA.md §5.5 manual discipline; this hook is the opt-in backstop).
+#
+# Canonical trailer examples (the-stoa project tier):
+#   Co-Authored-By: CAPTAIN_ADA_the-stoa <captain-ada@the-stoa.local>
+#   Co-Authored-By: CAPTAIN_DAEDALUS_the-stoa <captain-daedalus@the-stoa.local>
+#   Co-Authored-By: CAPTAIN_CATO_the-stoa <captain-cato@the-stoa.local>
+
+MSG_FILE="$1"
+COMMIT_SOURCE="$2"   # message|template|merge|squash|commit|<empty>
+
+# 1. No seat declared this session -> clean no-op (the manual ADA trailer, if
+#    any, is already in MSG_FILE; we add nothing).  STOA_SEAT_TRAILER is set by
+#    the seat's autonomous-mode activation (coordinates with stoa--w6d, which
+#    sets GIT_COMMITTER_* + a session seat-marker). UNTRUSTED-INPUT NOTE: this
+#    is a SESSION-LOCAL env var the seat sets for itself, not commit content,
+#    branch name, or any attacker-supplied value (see design §6 threat map).
+[ -n "$STOA_SEAT_TRAILER" ] || exit 0
+
+# 2. Skip merge/squash sources (their bodies are machine-generated; trailer
+#    preservation there is GitHub's job per §28.3, not this hook's).
+case "$COMMIT_SOURCE" in
+  merge|squash) exit 0 ;;
+esac
+
+# 3. Defensive: MSG_FILE must exist + be writable. If not, no-op (fail-open).
+[ -n "$MSG_FILE" ] && [ -f "$MSG_FILE" ] && [ -w "$MSG_FILE" ] || exit 0
+
+# 4a. Reject any embedded newline / control char BEFORE the shape gate. A value
+#    whose WHOLE string ends in `.local>` but contains an embedded newline would
+#    pass the shape `case` below, then `git interpret-trailers` would SPLIT it
+#    into TWO Co-Authored-By trailers — smuggling a second non-canonical
+#    co-author. The POSIX `[[:cntrl:]]` bracket class inside a `case` pattern
+#    matches a newline as well as any other control char, with no command
+#    substitution (so no trailing-newline-stripping pitfall). If one is present
+#    we take the SAME no-op path the shape gate takes: no trailer added,
+#    fail-open exit 0, commit unaffected.
+case "$STOA_SEAT_TRAILER" in
+  *[[:cntrl:]]*) exit 0 ;;   # newline/control char present -> malformed, no-op, fail-open
+esac
+
+# 4b. Validate the seat-trailer shape. We ONLY accept a value matching the
+#    canonical Co-Authored-By: CAPTAIN_<X>_<slug> <captain-<x>@<slug>.local>
+#    shape. Values carrying a newline/control char (4a) or whose shape does not
+#    match are REJECTED (no-op) rather than passed to interpret-trailers. This
+#    gate blocks the newline/control-char-smuggle class (4a) and the
+#    shape-mismatch class (metacharacter / multi-line / non-canonical values);
+#    it does NOT and cannot claim to neutralize execution — execution is
+#    prevented separately by never eval'ing the value, never word-splitting it
+#    into a command, only matching it + handing it to interpret-trailers as a
+#    single double-quoted --trailer literal (step 5).
+case "$STOA_SEAT_TRAILER" in
+  "Co-Authored-By: "*" <"*".local>") : ;;   # shape OK
+  *) exit 0 ;;                                # malformed -> no-op, fail-open
+esac
+
+# 5. Idempotent append. --if-exists=addIfDifferent: append ONLY if this exact
+#    (key,value) pair is not already present anywhere in the message (so a
+#    trailer ADA wrote by hand is NOT duplicated), BUT a DIFFERENT CAPTAIN's
+#    trailer on the same commit IS appended (multi-CAPTAIN commits work). This
+#    is why addIfDifferent, not doNothing (doNothing keys on the trailer KEY
+#    'Co-Authored-By' alone, which would wrongly suppress a second distinct
+#    CAPTAIN). Verified by local probe 2026-06-04.
+if git interpret-trailers \
+      --if-exists=addIfDifferent \
+      --trailer "$STOA_SEAT_TRAILER" \
+      "$MSG_FILE" > "$MSG_FILE.stoa.tmp" 2>/dev/null; then
+  mv "$MSG_FILE.stoa.tmp" "$MSG_FILE" 2>/dev/null || rm -f "$MSG_FILE.stoa.tmp"
+else
+  rm -f "$MSG_FILE.stoa.tmp"   # interpret-trailers failed -> leave msg untouched
+fi
+
+exit 0   # UNCONDITIONAL — fail-open contract

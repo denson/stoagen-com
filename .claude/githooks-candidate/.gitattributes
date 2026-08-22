@@ -1,0 +1,5 @@
+# Stoa git-hook candidates MUST ship with LF line endings. A prepare-commit-msg
+# hook with CRLF line endings can fail to execute under /bin/sh on some shells
+# (the `#!/bin/sh\r` interpreter path is not found). Force LF on checkout/commit
+# regardless of the consumer's core.autocrlf so the candidate is always armable.
+prepare-commit-msg text eol=lf

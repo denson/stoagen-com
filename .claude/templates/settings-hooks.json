@@ -1,0 +1,69 @@
+{
+  "_comment": "CANDIDATE Stoa enforcement-hook registration block — NOT auto-merged into any live settings.json. install.sh deploys this file to <DEST>/.claude/templates/settings-hooks.json as a candidate ONLY. Merging it into a live .claude/settings.json ARMS the hooks, which gate real tool calls in that session; that is an explicit operator-gated step (install.sh --enable-hooks, DEFAULT OFF) that even when used targets the INSTALL TARGET, never the running build session. HARD SAFETY CONSTRAINT (design-rev1 section 8): no Stoa arc auto-writes a live settings.json. The HOOKS_DIR placeholder slot in each command path is sed-substituted at deploy time to the deployed .claude/hooks absolute path. The 'if' fields use permission-rule syntax to narrow which commands invoke each gate (the gate script then inspects tool_input.command to build its self-contained deny message). All gates FAIL-OPEN on script error. STAGE 2 (judgment tier, design-rev1 arc-50): the PostToolUse-on-Agent NOMOS-dispatch trigger and the SessionStart(compact) reprime are BEST-EFFORT — both ride upstream-broken additionalContext channels (PostToolUse #55889 / #18427; the compact matcher #15174; no fix through v2.1.170) and may not reach the model on current versions. They ship forward-compatible + harmless-when-broken; the RELIABLE carriers are the Stop self-check (decision:block+reason, a working channel) for the NOMOS reminder and CLAUDE.md + the polling cron for the post-compaction reprime. NOTE (Arc 63 / stoa--p41.2): the SessionStart(startup|resume) substrate-check trigger is DIFFERENT — its additionalContext IS a WORKING injection channel as of v2.1.170 (only the compact matcher is broken), so its drift surface reaches the model on a normal start/resume; it ALSO writes a non-additionalContext P-FALLBACK signal (.claude/.substrate-drift-signal) read by the Stop self-check + CLAUDE.md so drift surfaces even if additionalContext ever regresses. See .claude/hooks/README.md section 6. TIMEOUT NOTE: every gate uses timeout 30 EXCEPT the SessionStart(compact) reprime, which uses 10 deliberately — a compact-resume reprime must be fast or be skipped (a slow reprime would stall the resume), and it does only a cheap file read; documented in the hook header, design-rev1, and README section 4.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(git *)",
+            "command": "{{HOOKS_DIR}}/pretooluse-clean-tree-before-branch.sh",
+            "timeout": 30
+          },
+          {
+            "type": "command",
+            "if": "Bash(bw comment*)",
+            "command": "{{HOOKS_DIR}}/pretooluse-no-dash-m-bw-comment.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "{{HOOKS_DIR}}/stop-self-check.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "{{HOOKS_DIR}}/posttooluse-agent-checker-trigger.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "{{HOOKS_DIR}}/sessionstart-compact-reprime.sh",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "{{HOOKS_DIR}}/sessionstart-substrate-check.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

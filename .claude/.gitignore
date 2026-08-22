@@ -1,0 +1,26 @@
+# Stoa substrate — transient runtime state (auto-generated, do not commit).
+# Written by install.sh (Arc 55 / stoa--2i5). Paths are relative to this
+# .claude/ directory. Re-running install.sh regenerates this file verbatim.
+# DO NOT EDIT MANUALLY — install.sh overwrites it on every run.
+
+# Cron state — durable scheduled-task lock (CronCreate durable:true).
+scheduled_tasks.lock
+
+# Per-arc-build worktrees; transient/empty residue post-merge (Windows
+# file-lock leaves orphan dirs — stoa--7ap).
+worktrees/
+
+# check-substrate-updates state file.
+.substrate-last-check
+
+# SessionStart substrate-check hook transients (Arc 63 / stoa--p41.2):
+# the per-session-start throttle stamp and the P-FALLBACK drift signal the
+# Stop self-check + CLAUDE.md read.
+.substrate-check-hook-stamp
+.substrate-drift-signal
+
+# Skill bytecode — stripped at deploy, but regenerated when a consumer runs
+# a skill (Arc 40 / stoa--t9u strips the deploy-time copy; this catches the
+# consumer-runtime regeneration).
+__pycache__/
+*.pyc

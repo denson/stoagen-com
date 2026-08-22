@@ -1,0 +1,26 @@
+# Stoa substrate deploy manifest — substitutions applied to deployed files.
+# Written by install.sh at deploy time. Read by check.sh + apply.sh to normalize.
+# Format: <deployed-relative-path>\t<token>\t<replacement>
+# DO NOT EDIT MANUALLY. install.sh rewrites this file on every re-run.
+# format=v1
+#
+# tier=project
+# deployed_at=2026-08-22T04:29:05Z
+# substrate_sha=9e612d2a
+
+.claude/MAJOR_CHIRON.md	{{NAME_SUFFIX}}	_stoagen_com
+.claude/MAJOR_HAMILTON.md	{{NAME_SUFFIX}}	_stoagen_com
+.claude/MAJOR_PLINY.md	{{NAME_SUFFIX}}	_stoagen_com
+.claude/MAJOR_POLYBIUS.md	{{NAME_SUFFIX}}	_stoagen_com
+.claude/agents/CAPTAIN_DAEDALUS_stoagen_com.md	{{NAME_SUFFIX}}	_stoagen_com
+.claude/agents/CAPTAIN_ARGUS_stoagen_com.md	{{NAME_SUFFIX}}	_stoagen_com
+.claude/agents/CAPTAIN_ADA_stoagen_com.md	{{NAME_SUFFIX}}	_stoagen_com
+.claude/agents/CAPTAIN_VERA_stoagen_com.md	{{NAME_SUFFIX}}	_stoagen_com
+.claude/agents/CAPTAIN_CATO_stoagen_com.md	{{NAME_SUFFIX}}	_stoagen_com
+.claude/agents/CAPTAIN_NOMOS_stoagen_com.md	{{NAME_SUFFIX}}	_stoagen_com
+.claude/agents/CAPTAIN_STRABO_stoagen_com.md	{{NAME_SUFFIX}}	_stoagen_com
+.claude/agents/CAPTAIN_BARTLEBY_stoagen_com.md	{{NAME_SUFFIX}}	_stoagen_com
+.claude/agents/CAPTAIN_HERALD_stoagen_com.md	{{NAME_SUFFIX}}	_stoagen_com
+.claude/agents/CAPTAIN_CURATOR_stoagen_com.md	{{NAME_SUFFIX}}	_stoagen_com
+.claude/agents/CAPTAIN_ZENO_stoagen_com.md	{{NAME_SUFFIX}}	_stoagen_com
+.claude/agents/CAPTAIN_TIRO_stoagen_com.md	{{NAME_SUFFIX}}	_stoagen_com

@@ -1,0 +1,6 @@
+--- /dev/null
++++ b/node_modules/pkg/package.json
+@@ -0,0 +1,3 @@
++{
++  "author": "Mallory Example"
++}
