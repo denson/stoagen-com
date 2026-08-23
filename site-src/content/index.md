@@ -11,7 +11,7 @@ Stoagen sites are written once and published twice. The reader gets a clean, fas
 
 ## See it working
 
-The flagship demonstration is **[Pueblo SRDA Questions](https://pueblo-srda-questions.stoagen.com/)**: the questions its author still needs answered about Pueblo, Colorado's senior services, with the public record laid out around them. Paste its link into ChatGPT, Claude, or Gemini and ask a real question, like "what help is there for my mother, who lives alone?" The assistant reads the current record, carries the site's honest caveats, and answers with the right program and the right phone number.
+The flagship demonstration is **[Pueblo SRDA Questions](https://pueblo-srda-questions.stoagen.com/)**, a guide to the senior services in Pueblo, Colorado. It lays out the public record of each program and marks plainly what is still unverified and what questions remain open. Paste its link into ChatGPT, Claude, or Gemini and ask something real, like "what help is there for my mother, who lives alone?" The assistant reads the current record, keeps the site's caveats, and answers with the right program and the right phone number.
 
 More on the [demo sites page](demos/), including what each one demonstrates.
 
