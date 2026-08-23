@@ -5,7 +5,7 @@ description: Working Stoagen sites you can hand to your own AI assistant right n
 ---
 # Demo sites
 
-The best argument for the pattern is watching it work. Each demo below is live; paste any of these links into ChatGPT, Claude, or Gemini and ask a question.
+The best argument for the pattern is watching it work. Each demo below is live; paste any of these links into ChatGPT or Claude and ask a question.
 
 ## Pueblo SRDA Questions
 
