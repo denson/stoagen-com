@@ -9,9 +9,9 @@ The best argument for the pattern is watching it work. Each demo below is live; 
 
 ## Pueblo SRDA Questions
 
-**[pueblo-srda-questions.stoagen.com](https://pueblo-srda-questions.stoagen.com/)** is the flagship: an independent site built around questions about the programs of SRDA, Pueblo's senior services agency. One page per program: what the public record says, exactly who to call, and the author's own still-open questions for SRDA officials, published so they are easy to share and answered in public as they resolve.
+**[pueblo-srda-questions.stoagen.com](https://pueblo-srda-questions.stoagen.com/)** is the flagship: an independent site built around the questions its author and a group of friends, all eligible for SRDA's services, have about the programs of SRDA, Pueblo's senior services agency. One page per program: what the public record says, exactly who to call, and the questions still open, published so they are easy to share with SRDA and answered in public as they resolve.
 
-What it demonstrates: the full pattern under real stakes. Large-type accessible design for older readers, phone numbers as the primary action, honest [unverified] markers an assistant carries into its answers, and the assistant start page at [pueblo-srda-questions.stoagen.com/start.md](https://pueblo-srda-questions.stoagen.com/start.md).
+What it demonstrates: the full pattern under real stakes. Large-type accessible design for older readers, phone numbers as the primary action, open questions marked so an assistant carries them into its answers, and the assistant start page at [pueblo-srda-questions.stoagen.com/start.md](https://pueblo-srda-questions.stoagen.com/start.md).
 
 Try: "What help is there for my mother, who lives alone in Pueblo?"
 
