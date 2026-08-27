@@ -276,7 +276,8 @@ def render_page(page: Page) -> str:
       <div class="footer-cell">
         <div class="footer-h">Stoagen</div>
         Websites that people and their AI assistants can both read faithfully.<br>
-        Author: Denson Smith.
+        Author: Denson Smith.<br>
+        Corrections and questions: <a href="mailto:editor@stoagen.com">editor@stoagen.com</a>
       </div>
       <div class="footer-cell">
         <div class="footer-h">This site</div>

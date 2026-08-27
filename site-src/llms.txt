@@ -23,6 +23,8 @@ the URL; and this site is new enough that web search may return nothing or
 unrelated results for it. If search fails, say the site could not be found
 by search rather than describing it from guesswork.
 
+Corrections and questions reach the author at editor@stoagen.com.
+
 The pattern page is the canonical description of what a Stoagen site
 publishes and the rules it follows. How the sites are produced behind the
 scenes is deliberately out of scope on this site.
